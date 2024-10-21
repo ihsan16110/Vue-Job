@@ -10,13 +10,14 @@ const showFullDescription = ref(false);
 
 const toggleFullDescription = () => {
     showFullDescription.value = !showFullDescription.value;
-}
+};
 
-const truncatedDescription = computed(() =>{
+const truncatedDescription = computed(() => {
 
     let description = props.job.description;
     if(!showFullDescription.value){
-        description = description.substring(0,90) + '..';
+        description = description.substring(0, 90) + '...';
+    //     description = description.length > 90 ? description.substring(0, 90) + '...' : description;
     }
     return description;
 });
